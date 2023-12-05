@@ -11,6 +11,7 @@ app.get('/', (req, res) => {
     res.json({
         message : 'OK'
     })
+    res.end('OK')
 })
 
 app.use('/berita', router)
