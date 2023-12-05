@@ -1,7 +1,7 @@
 const express = require('express')
 const cors = require('cors')
 const app = express()
-const port = 3001
+const port = 3000
 const router = require('./routes')
 
 app.use(cors())
@@ -23,6 +23,6 @@ app.use((err, req, res, next) =>{
     })
 })
 
-app.listen(port, ()=> {
+app.listen(port, '0.0.0.0', ()=> {
     console.log(`app is running on port ${port}`)
 })
