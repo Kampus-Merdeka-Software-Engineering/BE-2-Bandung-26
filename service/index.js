@@ -6,7 +6,7 @@ const { listPerPage } = require('../config')
 async function getAllBerita(page=1) {
     const offset = helper.getOffset(page, config.listPerPage)
     const data = await db.query(
-        `SELECT * FROM Berta LIMIT ${offset}, ${config.listPerPage}`
+        `SELECT * FROM Berita LIMIT ${offset}, ${config.listPerPage}`
     )
     const result = helper.isEmpty(data)
     const meta = {
@@ -27,7 +27,7 @@ async function getAllBerita(page=1) {
 
 async function getSingleBerita(id) {
     const data = await db.query(
-        `SELECT * FROM Berta WHERE id=${id}`
+        `SELECT * FROM Berita WHERE id=${id}`
     )
     const result = helper.isEmpty(data)
 
