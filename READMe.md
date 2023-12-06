@@ -1,0 +1,1 @@
+1. menginstall library yang di butuhkan
