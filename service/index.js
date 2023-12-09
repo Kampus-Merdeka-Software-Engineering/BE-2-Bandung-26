@@ -43,24 +43,6 @@ async function getSingleBerita(id) {
     }
 }
 
-async function createmessage(data) {
-    const result = await db.query(
-        `INSERT INTO feed (nama, email, subjek, pesan) VALUES ('${data.nama}','${data.email}','${data.subjek}','${data.pesan}')`
-    )
-
-    let message = 'Error in adding berita'
-
-    if (result.affectedRows) {
-        message = 'Success in adding berita'
-        return {
-            ...helper.requestSucces(message, true)
-        }
-    } else {
-        return {
-            ...helper.requestFail('Fail to add berita')
-        }
-    }
-}
 
 async function getBeritaByTopik(topik) {
     const data = await db.query(
@@ -77,6 +59,24 @@ async function getBeritaByTopik(topik) {
         return {
             ...helper.requestFail(`Fail to get single berita by topik: ${topik}`)
         };
+    }
+}
+async function createmessage(data) {
+    const result = await db.query(
+        `INSERT INTO feed (nama, email, subjek, pesan) VALUES ('${data.nama}','${data.email}','${data.subjek}','${data.pesan}')`
+    )
+
+    let message = 'Error in adding berita'
+
+    if (result.affectedRows) {
+        message = 'Success in adding berita'
+        return {
+            ...helper.requestSucces(message, true)
+        }
+    } else {
+        return {
+            ...helper.requestFail('Fail to add berita')
+        }
     }
 }
 
