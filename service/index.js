@@ -62,8 +62,27 @@ async function createmessage(data) {
     }
 }
 
+async function getBeritaByTopik(topik) {
+    const data = await db.query(
+        `SELECT * FROM Berita WHERE topik=${topik}`
+    );
+
+    const result = helper.isEmpty(data);
+
+    if (data.length) {
+        return {
+            ...helper.requestSucces(`Success get single berita by topik: ${topik}`, false, result)
+        };
+    } else {
+        return {
+            ...helper.requestFail(`Fail to get single berita by topik: ${topik}`)
+        };
+    }
+}
+
 module.exports = {
     getAllBerita,
     getSingleBerita,
-    createmessage
+    createmessage,
+    getBeritaByTopik
 }
