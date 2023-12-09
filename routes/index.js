@@ -29,7 +29,7 @@ router.post('/', async function(req, res, next) {
 
 router.get('/topik/:topik', async function(req, res, next) {
     try {
-        const topik = req.query.topik;
+        const topik = req.params.topik;
         res.json(await service.getBeritaByTopik(topik));
     } catch (error) {
         console.error('Error while getting berita by topik', error.message);
