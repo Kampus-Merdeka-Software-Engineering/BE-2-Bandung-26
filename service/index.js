@@ -64,7 +64,7 @@ async function createmessage(data) {
 
 async function getBeritaByTopik(topik) {
     const data = await db.query(
-        `SELECT * FROM Berita WHERE topik=${topik}`
+        `SELECT * FROM Berita WHERE topik='${topik}'`
     );
 
     const result = helper.isEmpty(data);
