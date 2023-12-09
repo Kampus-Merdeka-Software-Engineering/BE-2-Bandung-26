@@ -27,7 +27,7 @@ router.post('/', async function(req, res, next) {
     }
 })
 
-router.get('/:topik', async function(req, res, next) {
+router.get('/topik/:topik', async function(req, res, next) {
     try {
         const topik = req.query.topik;
         res.json(await service.getBeritaByTopik(topik));
