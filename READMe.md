@@ -1,5 +1,3 @@
-
-
 # Backend Naratif Indonesia
 
 Naratif Indonesia adalah portal berita digital yang didirikan pada tahun 2023.
