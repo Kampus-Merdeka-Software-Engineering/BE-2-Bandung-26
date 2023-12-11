@@ -36,5 +36,4 @@ router.get('/topik/:topik', async function(req, res, next) {
         next(error);
     }
 });
-
 module.exports = router

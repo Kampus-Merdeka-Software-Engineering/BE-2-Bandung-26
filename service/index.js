@@ -80,6 +80,7 @@ async function createmessage(data) {
     }
 }
 
+
 module.exports = {
     getAllBerita,
     getSingleBerita,
